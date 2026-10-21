@@ -7,6 +7,7 @@
 - Repository: `parallelvisionberlin/alejandro-molinari-website`.
 - Production branch: `main`.
 - Inspected base commit: `1988e12aef2e3a4386c9d6e0f11c7300daa70b46`.
+- Last verified runtime commit: `741e8c9798518030a7a9e99c236b8a5a6a4e680b`.
 - Hosting: Cloudflare Pages, automatic deployments from `main` per project history.
 - Domains: `https://alejandromolinari.com/` and `https://www.alejandromolinari.com/`.
 - Existing website content was observed live in the browser on the apex domain.
@@ -33,6 +34,9 @@
 
 - Local validation passed: PNG dimensions, six ICO frames, embedded SVG image and icon references on every HTML page.
 - Exact comparison against the base confirms that only favicon markup changed in the three pages.
-- Publication: pending atomic commit to the current main branch.
-- Production favicon: pending browser verification on both domains.
-- Direct shell HTTP access returns 403 in this environment; the browser loads the apex site.
+- Publication: favicon implementation committed to `main`; Cloudflare automatically published it.
+- Browser verified new versioned favicon links on both apex and www homepages.
+- Browser opened the production SVG on each domain and confirmed identical embedded artwork.
+- The rendered production SVG visibly matches the approved AM monogram.
+- Direct shell HTTP access returns 403 in this environment; browser production checks succeeded.
+- No outstanding work for this favicon request. Future edits should start from the latest main branch.
