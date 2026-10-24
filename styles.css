@@ -19,7 +19,9 @@
 .artwork-gucci-title strong{font-weight:400;font-style:italic}
 .artwork-gucci-foot,.artwork-victoria-foot,.artwork-stay-foot{display:flex;justify-content:space-between;align-items:end;gap:10px;font-size:clamp(10px,.73vw,13px);font-weight:730;line-height:1.2;letter-spacing:.02em}
 .artwork-gucci-foot span,.artwork-victoria-foot span,.artwork-stay-foot span{font-size:25px;font-weight:400;line-height:.5}
-.artwork-victoria{color:#fff8f4;background-color:#78655b;background-image:linear-gradient(180deg,rgba(27,19,20,.6),transparent 40%,rgba(26,19,25,.78)),url('https://i.ytimg.com/vi/Jcr2RBxFmLQ/hqdefault.jpg');background-position:center;background-size:cover}
+.artwork-victoria{color:#fff8f4;background-color:#78655b;background-image:url('assets/victoria-secret-portfolio-2026.avif');background-position:center;background-size:cover}
+/* The approved cover already contains these exact labels; keep semantic HTML without double-rendering the text. */
+.artwork-victoria>.artwork-eyebrow,.artwork-victoria>.artwork-victoria-title,.artwork-victoria>.artwork-victoria-foot{opacity:0}
 .artwork-victoria-title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(44px,4.9vw,88px);font-weight:400;letter-spacing:-.065em;line-height:.94}
 .artwork-stay{color:#d8e3de;background:linear-gradient(155deg,#192121 4%,#435853 54%,#111818 100%);position:relative}
 .artwork-stay::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(110deg,transparent 0,transparent 34px,rgba(255,255,255,.035) 35px,transparent 36px);pointer-events:none}

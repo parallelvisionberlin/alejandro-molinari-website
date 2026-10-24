@@ -40,3 +40,11 @@
 - The rendered production SVG visibly matches the approved AM monogram.
 - Direct shell HTTP access returns 403 in this environment; browser production checks succeeded.
 - No outstanding work for this favicon request. Future edits should start from the latest main branch.
+
+## 2026-10-24 / Photography navigation and Victoria's Secret card
+
+- Source task: link the personal artist archive to the existing Parallel Vision photographic archive, and use the user-selected Victoria's Secret card artwork.
+- Verified photography destination: `https://parallelvisionlabel.com/photography/`, whose own header/footer already link back to `alejandromolinari.com`.
+- Homepage and two existing detail-page navigations include a Photography link opening the archive in a new tab. The final former Artist archive card is titled Photography, keeps its existing amber portrait preview, and links to the same verified destination. It remains accessible in both Editorial and Archive project filters.
+- Home Victoria's Secret tile uses `assets/victoria-secret-portfolio-2026.avif`, a 900 x 750 optimized version of the artwork approved in chat. Its composited labels are already part of the image; the existing DOM labels stay in the markup for accessibility but are visually transparent so they cannot duplicate. The underlying detail page and music credits are unchanged.
+- No site design, spacing, filters, other projects or hosting configuration altered.
