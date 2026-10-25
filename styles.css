@@ -67,3 +67,7 @@
 .artwork-stay-image>.artwork-eyebrow,.artwork-stay-image>.artwork-stay-foot{position:relative;z-index:1;text-shadow:0 1px 4px #000a}
 @media(max-width:760px){.artwork-culto{padding:0 12px 10px}.culto-feature-head strong{font-size:clamp(27px,5.1vw,42px)}.artwork-culto img{height:66%;max-height:66%}}
 @media(max-width:490px){.artwork-culto{padding:0 22px 14px}.culto-feature-head strong{font-size:clamp(40px,10vw,64px)}.artwork-culto img{height:68%;max-height:68%}}
+
+.artwork-stay-image .artwork-stay-fallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;z-index:1;pointer-events:none;color:#e4eee7;text-shadow:0 4px 30px #0009}
+.artwork-stay-image.cover-ready .artwork-stay-fallback{display:none}
+.artwork-stay-image.cover-failed img{display:none}
