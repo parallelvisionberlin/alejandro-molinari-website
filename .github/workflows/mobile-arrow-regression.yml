@@ -9,6 +9,9 @@ on:
       - "styles.css"
       - "tests/verify-mobile-arrows.mjs"
       - ".github/workflows/mobile-arrow-regression.yml"
+      - "assets/*.webp"
+      - "assets/*.png"
+      - "tests/verify-portfolio-artwork.mjs"
   pull_request:
     paths:
       - "index.html"
@@ -25,3 +28,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Verify arrow-free mobile markup
         run: node tests/verify-mobile-arrows.mjs
+      - name: Verify approved portfolio artwork
+        run: node tests/verify-portfolio-artwork.mjs
