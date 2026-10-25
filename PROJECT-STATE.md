@@ -60,3 +60,13 @@
 - New video-detail page `work/symmetry/index.html` embeds the official `youtube-nocookie.com` player and links to KALTBLUT, the official YouTube video and the label. No unrelated project pages or photographs altered.
 - Preserves Photography hidden status, official AM07 favicon, and no mobile emoji arrows. Automated checks updated to cover the new page and poster.
 - Production status at authoring: pending PR merge and Cloudflare Pages deploy. Do not claim published before verifying the site's actual public HTML and media responses.
+
+## 2026-10-25 / Selected Recordings link and Symmetry thumbnail
+
+- The owner requested that **Selected recordings** open the official Parallel Vision releases section, not Alejandro's Bandcamp. The Selected Work card now links directly to `https://parallelvisionlabel.com/#releases`. The independent "Explore the full catalogue" Bandcamp link remains unchanged.
+- The owner's screenshot showed the bright red, letter-heavy Italians Do It Better YouTube thumbnail beside another red portrait. The Symmetry card now uses a clean editorial group portrait from the KALTBLUT Symmetry feature, credited by the magazine to photographer **Amaan Hassen**.
+- Source original: `https://www.kaltblut-magazine.com/wp-content/uploads/2021/05/JUNO-FRANCIS-APRIL-2021-6.jpg`, 1050 × 1575. Web display derivative: `assets/symmetry-kaltblut-editorial.webp`, 1160 × 1000, cropped for the 3-column card and WebP-encoded, no generative edits.
+- The earlier label's official video thumbnail `assets/symmetry-idib-official-video.webp` is preserved for rollback and the standalone `work/symmetry/` page retains its official video embed and KALTBLUT premiere.
+- Preserve the rest of the nine selected works, original Purple wordmark, AM07 favicon, current mobile no-arrows rule, and temporarily unpublished Photography archive.
+- Regression checks explicitly verify the release destination, alternative image, lack of Bandcamp link on that project card, and no mobile emoji arrows.
+- Publication via Cloudflare Pages is not confirmed by a GitHub write. Require green checks plus real live-domain verification before claiming success.

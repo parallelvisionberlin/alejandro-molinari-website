@@ -46,7 +46,7 @@ const posterBytes = readFileSync(symmetryPoster);
 assert.equal(posterBytes.subarray(0,4).toString('ascii'), 'RIFF');
 assert.equal(posterBytes.subarray(8,12).toString('ascii'), 'WEBP');
 assert.match(html, /href="work\/symmetry\/"/, 'The new card must open the Symmetry detail page.');
-assert.match(html, /src="assets\/symmetry-idib-official-video\.webp"/);
+assert.match(html, /src="assets\/symmetry-kaltblut-editorial\.webp"/);
 assert.ok(html.includes('<h2>Symmetry</h2>'), 'Symmetry must replace the Sunday Morning project card.');
 assert.ok(!html.includes('<h2>Sunday Morning</h2>'), 'Do not keep the replaced Sunday Morning project card.');
 assert.match(html, /href="https:\/\/idib\.ffm\.to\/symmetry"/, 'The recording must link to the Italians Do It Better release.');
@@ -59,4 +59,16 @@ assert.match(symmetryDetail, /Marcus Spitta/);
 assert.doesNotMatch(symmetryDetail, /[\u2190-\u21FF\u2794-\u27BF]/u, 'No emoji arrows in Symmetry details.');
 assert.ok(css.includes('.artwork-symmetry img'), 'Official poster must have a full-frame, uncropped style.');
 
-console.log(`Verified ${count} projects, 4 local artwork assets, all links, logo and mobile rules.`);
+
+const pressArtwork = join(root,'assets','symmetry-kaltblut-editorial.webp');
+assert.ok(existsSync(pressArtwork), 'KALTBLUT editorial artwork must be stored locally.');
+assert.ok(statSync(pressArtwork).size > 10000, 'The editorial artwork file is unexpectedly small.');
+const pressBytes = readFileSync(pressArtwork);
+assert.equal(pressBytes.subarray(0,4).toString('ascii'),'RIFF');
+assert.equal(pressBytes.subarray(8,12).toString('ascii'),'WEBP');
+assert.match(html, /Symmetry editorial portrait photographed by Amaan Hassen/);
+assert.match(html, /class="project-media image-media artwork-recordings" href="https:\/\/parallelvisionlabel\.com\/#releases"/, 'Selected Recordings must open Parallel Vision releases directly.');
+assert.doesNotMatch(html, /class="project-media image-media artwork-recordings" href="https:\/\/alejandromolinari\.bandcamp\.com\//, 'Selected Recordings must not link to Bandcamp.');
+assert.match(css, /\.artwork-symmetry img\{[\s\S]*?object-fit:cover;/, 'Symmetry editoral thumbnail must fit the project card without letterboxing.');
+
+console.log(`Verified ${count} projects, 5 local artwork assets, all links, logo and mobile rules.`);
