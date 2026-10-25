@@ -1,0 +1,27 @@
+name: Prevent emoji arrows on mobile
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "work/**"
+      - "styles.css"
+      - "tests/verify-mobile-arrows.mjs"
+      - ".github/workflows/mobile-arrow-regression.yml"
+  pull_request:
+    paths:
+      - "index.html"
+      - "work/**"
+      - "styles.css"
+      - "tests/verify-mobile-arrows.mjs"
+      - ".github/workflows/mobile-arrow-regression.yml"
+
+jobs:
+  no-emoji-arrows:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Verify arrow-free mobile markup
+        run: node tests/verify-mobile-arrows.mjs
