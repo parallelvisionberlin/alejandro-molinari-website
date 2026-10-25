@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const pages = ['index.html', 'work/gucci-palace/index.html', 'work/victorias-secret-body/index.html'];
+const pages = ['index.html', 'work/gucci-palace/index.html', 'work/victorias-secret-body/index.html', 'work/symmetry/index.html'];
 const forbidden = /[\u2190-\u21FF\u2794-\u27BF]/u;
 let markerCount = 0;
 for (const path of pages) {
@@ -14,7 +14,7 @@ for (const path of pages) {
     assert.match(element[0], /aria-hidden="true"/, `${path}: decorative arrow needs aria-hidden`);
     markerCount++;
   }
-  assert.match(html, /styles\.css\?v=20261025-mobile-arrows/, `${path}: fresh stylesheet needed for updated icon treatment`);
+  assert.match(html, /styles\.css\?v=20261025-(?:mobile-arrows|symmetry-film)/, `${path}: fresh stylesheet needed for updated icon treatment`);
 }
 assert.ok(markerCount >= 20, 'Expected desktop-only arrow indicators as non-text elements');
 const css = readFileSync(join(root, 'styles.css'), 'utf8');
