@@ -52,3 +52,22 @@
 .detail-return a:hover{text-decoration:underline}
 @media(max-width:760px){.detail-hero{padding-top:82px}.detail-hero h1{font-size:clamp(54px,11vw,95px)}.detail-headline{grid-template-columns:1fr;gap:18px;margin-top:36px}.detail-credit-wrap{grid-template-columns:1fr;gap:35px}.detail-credit-list div{grid-template-columns:1fr 1.3fr}}
 @media(max-width:490px){.detail-hero h1{font-size:clamp(49px,13vw,73px)}.detail-headline p{font-size:25px}.detail-credit-list div{grid-template-columns:1fr;gap:5px}.detail-return{gap:20px;flex-direction:column}}
+
+/* 2026-10-25: verified artwork treatments. Keep the source cover unchanged and show its Purple Diary feature. */
+.artwork-culto{background:#faf9f6;color:#111;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:0 clamp(13px,2.2vw,32px) clamp(9px,1.25vw,18px)}
+.culto-feature-head{display:flex;width:100%;align-items:baseline;justify-content:space-between;gap:12px;padding:clamp(11px,1.4vw,22px) 0 clamp(7px,.8vw,13px);border-bottom:1px solid #c1c0bd}
+.culto-feature-head strong{font-family:Georgia,'Times New Roman',serif;font-size:clamp(28px,4.25vw,69px);font-weight:400;letter-spacing:-.105em;line-height:.9}
+.culto-feature-head>span{font-size:clamp(10px,.76vw,13px);font-weight:800;letter-spacing:.06em}
+.artwork-culto img{display:block;width:auto;max-width:95%;height:68%;max-height:68%;min-height:0;object-fit:contain;object-position:center center;filter:contrast(1.035)}
+.culto-feature-foot{display:flex;width:100%;justify-content:space-between;gap:14px;border-top:1px solid #c1c0bd;padding-top:9px;font-size:clamp(9px,.7vw,12px);font-weight:800;letter-spacing:.06em}
+.culto-feature-foot span:last-child{white-space:nowrap}
+.artwork-stay-image{position:relative;background-color:#131a18;isolation:isolate}
+.artwork-stay-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;object-position:center}
+.artwork-stay-image::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.53),transparent 24%,transparent 70%,rgba(0,0,0,.64));z-index:-1;pointer-events:none}
+.artwork-stay-image>.artwork-eyebrow,.artwork-stay-image>.artwork-stay-foot{position:relative;z-index:1;text-shadow:0 1px 4px #000a}
+@media(max-width:760px){.artwork-culto{padding:0 12px 10px}.culto-feature-head strong{font-size:clamp(27px,5.1vw,42px)}.artwork-culto img{height:66%;max-height:66%}}
+@media(max-width:490px){.artwork-culto{padding:0 22px 14px}.culto-feature-head strong{font-size:clamp(40px,10vw,64px)}.artwork-culto img{height:68%;max-height:68%}}
+
+.artwork-stay-image .artwork-stay-fallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;z-index:1;pointer-events:none;color:#e4eee7;text-shadow:0 4px 30px #0009}
+.artwork-stay-image.cover-ready .artwork-stay-fallback{display:none}
+.artwork-stay-image.cover-failed img{display:none}
