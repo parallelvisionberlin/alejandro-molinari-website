@@ -48,3 +48,15 @@
 - Homepage and two existing detail-page navigations include a Photography link opening the archive in a new tab. The final former Artist archive card is titled Photography, keeps its existing amber portrait preview, and links to the same verified destination. It remains accessible in both Editorial and Archive project filters.
 - Home Victoria's Secret tile uses `assets/victoria-secret-portfolio-2026.avif`, a 900 x 750 optimized version of the artwork approved in chat. Its composited labels are already part of the image; the existing DOM labels stay in the markup for accessibility but are visually transparent so they cannot duplicate. The underlying detail page and music credits are unchanged.
 - No site design, spacing, filters, other projects or hosting configuration altered.
+
+## 2026-10-25 / Symmetry / KALTBLUT video premiere
+
+- User requested replacement of the standalone Sunday Morning card in Selected Work with **Symmetry** by Juno Francis and Alejandro Molinari, together with the official Italians Do It Better video and KALTBLUT magazine premiere.
+- Verified at KALTBLUT: magazine published the video premiere on 2021-05-21; the official film was directed by Marcus Spitta and filmed at Berlin's KitKatClub.
+- Verified official video posted by Italians Do It Better Music on 2021-05-21: YouTube ID `wmRRiQqba30`. The supplied credits identify Alejandro Molinari as music writer, producer and mixing engineer; Jacob Fagerstål for lyrics and melody; Jonas Kolahdoozan for camera.
+- Personal Selected Work homepage (`index.html`): replaced the standalone Sunday Morning project tile with a **Symmetry** film project linking to `work/symmetry/`; 9 cards remain, with one tile accessible from Editorial and Music filters. The Vogue Czechoslovakia editorial reference to Sunday Morning is deliberately preserved because it represents another project.
+- Recordings list: row 04 now displays Symmetry with Juno Francis and links to the verified Italians Do It Better release link `https://idib.ffm.to/symmetry`.
+- New self-hosted poster `assets/symmetry-idib-official-video.webp` derives from the official label's 1280×720 YouTube artwork, optimized to WebP without cropping. CSS uses `object-fit:contain` to protect the embedded cover lettering.
+- New video-detail page `work/symmetry/index.html` embeds the official `youtube-nocookie.com` player and links to KALTBLUT, the official YouTube video and the label. No unrelated project pages or photographs altered.
+- Preserves Photography hidden status, official AM07 favicon, and no mobile emoji arrows. Automated checks updated to cover the new page and poster.
+- Production status at authoring: pending PR merge and Cloudflare Pages deploy. Do not claim published before verifying the site's actual public HTML and media responses.
