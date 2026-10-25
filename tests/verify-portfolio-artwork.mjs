@@ -38,4 +38,25 @@ assert.ok(html.includes('artwork-stay-clean'), 'Keep the original album cover un
 assert.ok(!html.includes('href="https://parallelvisionlabel.com/photography/"'), 'Photography stays unpublished.');
 assert.ok(css.includes('.ui-external-icon,.media-arrow{display:none!important;}'), 'No arrows on mobile.');
 assert.ok(css.includes('.artwork-culto .culto-feature-logo'), 'Purple logo CSS is missing.');
+
+const symmetryPoster = join(root,'assets','symmetry-idib-official-video.webp');
+assert.ok(existsSync(symmetryPoster), 'The official Symmetry poster must be self-hosted.');
+assert.ok(statSync(symmetryPoster).size > 20000, 'The Symmetry video poster is too small.');
+const posterBytes = readFileSync(symmetryPoster);
+assert.equal(posterBytes.subarray(0,4).toString('ascii'), 'RIFF');
+assert.equal(posterBytes.subarray(8,12).toString('ascii'), 'WEBP');
+assert.match(html, /href="work\/symmetry\/"/, 'The new card must open the Symmetry detail page.');
+assert.match(html, /src="assets\/symmetry-idib-official-video\.webp"/);
+assert.ok(html.includes('<h2>Symmetry</h2>'), 'Symmetry must replace the Sunday Morning project card.');
+assert.ok(!html.includes('<h2>Sunday Morning</h2>'), 'Do not keep the replaced Sunday Morning project card.');
+assert.match(html, /href="https:\/\/idib\.ffm\.to\/symmetry"/, 'The recording must link to the Italians Do It Better release.');
+assert.match(html, /KALTBLUT video premiere/, 'The magazine premiere must be described accurately.');
+const symmetryDetail = readFileSync(join(root,'work/symmetry/index.html'),'utf8');
+assert.match(symmetryDetail, /youtube-nocookie\.com\/embed\/wmRRiQqba30/, 'Symmetry detail page must embed the official video.');
+assert.match(symmetryDetail, /www\.kaltblut-magazine\.com\/video-premiere-juno-francis-alejandro-molinari-symmetry/);
+assert.match(symmetryDetail, /idib\.ffm\.to\/symmetry/);
+assert.match(symmetryDetail, /Marcus Spitta/);
+assert.doesNotMatch(symmetryDetail, /[\u2190-\u21FF\u2794-\u27BF]/u, 'No emoji arrows in Symmetry details.');
+assert.ok(css.includes('.artwork-symmetry img'), 'Official poster must have a full-frame, uncropped style.');
+
 console.log(`Verified ${count} projects, 4 local artwork assets, all links, logo and mobile rules.`);
