@@ -282,3 +282,86 @@
   .symmetry-premiere-copy p{font-size:16px}
   .symmetry-film-caption{flex-wrap:wrap;row-gap:6px}
 }
+
+/* Original Vogue Czechoslovakia Cowgirls film still.
+   Exact supplied Vogue SVG wordmark, untouched still apart from removing video UI.
+   Preserve the portrait and chrome object at every size, including mobile. */
+.artwork-vogue-film{
+  position:relative;
+  display:block;
+  padding:0;
+  isolation:isolate;
+  background:#09090c;
+  color:#f7f6f3;
+  overflow:hidden;
+}
+.artwork-vogue-film .vogue-cowgirls-still{
+  position:absolute;
+  inset:0 0 0 auto;
+  z-index:0;
+  display:block;
+  width:56%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  filter:none;
+  transform:none;
+  transition:none;
+}
+.artwork-vogue-film::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(90deg,#09090c 0%,#09090c 39%,rgba(9,9,12,.83) 46%,transparent 62%);
+  pointer-events:none;
+}
+.artwork-vogue-film .vogue-brand-mark{
+  position:absolute;
+  z-index:2;
+  top:clamp(22px,2vw,32px);
+  left:clamp(18px,2vw,29px);
+  display:block;
+  width:40%;
+  height:auto;
+  max-height:85px;
+  object-fit:contain;
+  object-position:left top;
+  filter:invert(1);
+  transform:none;
+  transition:none;
+}
+.artwork-vogue-film .vogue-film-kicker{
+  position:absolute;
+  z-index:2;
+  top:clamp(88px,9vw,120px);
+  left:clamp(18px,2vw,29px);
+  max-width:42%;
+  font:700 clamp(9px,.73vw,12px)/1.25 Arial,Helvetica,sans-serif;
+  letter-spacing:.06em;
+  color:#d6d5d1;
+}
+.artwork-vogue-film .vogue-film-subtitle{
+  position:absolute;
+  z-index:2;
+  bottom:clamp(21px,2.25vw,37px);
+  left:clamp(18px,2vw,29px);
+  max-width:40%;
+  font:700 clamp(10px,.84vw,13px)/1.35 Arial,Helvetica,sans-serif;
+  letter-spacing:.01em;
+  color:#f0efeb;
+}
+.artwork-vogue-film .media-arrow{z-index:3;}
+.artwork-vogue-film:hover .vogue-cowgirls-still,
+.artwork-vogue-film:hover .vogue-brand-mark{transform:none;}
+@media(max-width:760px){
+ .artwork-vogue-film{padding:0;}
+ .artwork-vogue-film .vogue-brand-mark{top:18px;left:18px;width:40%;max-height:66px;}
+ .artwork-vogue-film .vogue-film-kicker{top:clamp(64px,14vw,98px);left:18px;font-size:9px;max-width:42%;}
+ .artwork-vogue-film .vogue-film-subtitle{left:18px;bottom:18px;font-size:10px;max-width:42%;}
+}
+@media(max-width:490px){
+ .artwork-vogue-film .vogue-brand-mark{top:22px;left:23px;width:41%;}
+ .artwork-vogue-film .vogue-film-kicker{top:clamp(77px,19vw,108px);left:23px;}
+ .artwork-vogue-film .vogue-film-subtitle{bottom:22px;left:23px;}
+}
