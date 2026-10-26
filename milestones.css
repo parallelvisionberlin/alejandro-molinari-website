@@ -1,0 +1,14 @@
+/* Verified career milestones / 2026-10-26. Scoped to the personal archive. */
+.milestones-content{padding-top:65px;min-width:0}
+.milestones-intro{margin:0 0 26px;max-width:660px;font-size:clamp(18px,1.45vw,25px);font-weight:650;letter-spacing:-.05em;line-height:1.24}
+.milestones-list{border-top:1px solid var(--ink)}
+.milestone{display:grid;grid-template-columns:96px minmax(0,1fr);gap:15px;padding:22px 0 25px;border-bottom:1px solid var(--line)}
+.milestone-date{font-size:11px;font-weight:700;letter-spacing:.035em;color:var(--muted);padding-top:5px}
+.milestone h3{margin:0 0 7px;font-size:clamp(21px,2vw,32px);letter-spacing:-.068em;line-height:1.12;font-weight:700}
+.milestone p{margin:0;color:#62625e;font-size:clamp(13px,1vw,16px);line-height:1.6;max-width:660px}
+.milestone-links{display:flex;flex-wrap:wrap;gap:9px 22px;margin-top:12px}
+.milestone-links a{font-size:12px;font-weight:750;text-decoration:underline;text-underline-offset:4px}
+.milestone-links a:hover{opacity:.6}
+.milestones-note{color:var(--muted);font-size:12px;line-height:1.5;margin:22px 0 0;max-width:650px}
+@media(max-width:760px){.milestones-content{padding-top:6px}.milestones-intro{font-size:18px}.milestone{grid-template-columns:75px minmax(0,1fr);gap:12px;padding:20px 0}.milestone h3{font-size:23px}}
+@media(max-width:490px){.milestone{grid-template-columns:1fr;gap:7px}.milestone-date{padding-top:0}.milestone h3{font-size:22px}.milestone p{font-size:14px}}
