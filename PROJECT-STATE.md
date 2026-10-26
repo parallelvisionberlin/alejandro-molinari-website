@@ -70,3 +70,13 @@
 - Preserve the rest of the nine selected works, original Purple wordmark, AM07 favicon, current mobile no-arrows rule, and temporarily unpublished Photography archive.
 - Regression checks explicitly verify the release destination, alternative image, lack of Bandcamp link on that project card, and no mobile emoji arrows.
 - Publication via Cloudflare Pages is not confirmed by a GitHub write. Require green checks plus real live-domain verification before claiming success.
+
+## 2026-10-26 / Vogue film still and Culto SoundCloud recording
+
+- Replaced the artificial blue typography-only Vogue Czechoslovakia tile with the third still supplied by the owner (close-up lips and reflective sculptural object) and the **exact Vogue SVG wordmark** supplied as `VOGUE_LOGO.svg`. Original files are preserved in `assets/vogue-cowgirls-still.webp` and `assets/vogue-wordmark.svg`. The WebP is a direct resized/optimized crop of the supplied 482×844 frame, removing the player mute overlay at the bottom; no generated media.
+- Design: dark left editorial matte containing the actual white-rendered SVG Vogue wordmark and small project descriptors, with the source portrait intact on the right. The real logo is not recreated with CSS text. Desktop and mobile CSS keep the link clickable and follow the no-arrow-on-mobile policy.
+- Vogue tile now links to the owner's original Instagram post `https://www.instagram.com/p/CLmkIbGqlWE/`, in place of the secondary Get Some Magazine article. The independent caption keeps `Even Cowgirls Have the Blues` and the Sunday Morning music connection.
+- The **Recordings** list item 02 for Culto a la Vida now uses the exact owner-supplied `https://on.soundcloud.com/NrWLxctxKnFdLw2scq` instead of Apple Music. Verified via HTTP 302 redirect to `https://soundcloud.com/parallelvisionlabel/sets/alejandro-molinari-culto-a-la` and 200 response.
+- The separate Culto a la Vida Purple Diary project card continues linking to its Purple article; it is intentionally not changed. The Selected Recordings card still opens `https://parallelvisionlabel.com/#releases`.
+- All nine projects, Symmetry film, temporary photography unpublication, AM07 favicon, and previously approved artwork remain intact. Automated regression checks validate both user-supplied images, project link and new recording link.
+- Publication to be confirmed by successful Cloudflare Pages check plus actual live-domain HTTP verification of HTML, WebP, SVG and CSS.
