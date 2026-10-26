@@ -83,7 +83,7 @@
 
 ## 2026-10-26 / Purple Radiooooo editorial recognition
 
-- Owner clarified the original Purple Magazine/Dairy editorial was Alejandro Molinari's **vision of music in the future**, originally represented as a vision of the year 2070, and that the blue illustrated Alejandro portrait was artwork by designer **Noemí First** (credit supplied by owner).
+- Owner clarified the original Purple Magazine/Diary editorial was Alejandro Molinari's **vision of music in the future**, originally represented as a vision of the year 2070, and that the blue illustrated Alejandro portrait was artwork by designer **Noemí First** (credit supplied by owner).
 - Public Purple Diary article verified at `https://purple.fr/diary/alejandro-molinari-for-purple-future-radiooooo/`, published **July 14, 2022**, under the exact title "Alejandro Molinari for Purple Future Radiooooo". The article discusses listening through future sensory systems, other-world resonances and social/emotional functions for new tonalities.
 - Homepage Radiooooo tile preserves the original `assets/radiooooo-portrait.webp` illustration unchanged, the exact publisher link, nine Selected Works, and the previously approved label/project ordering.
 - Publisher identity is now displayed in the text metadata immediately below the blue portrait: **authentic Purple logo** reused from `assets/purple-diary-logo.png`, publisher metadata "DIARY / 14 JUL 2022", project title "Purple Future Radiooooo", narrative "A vision of music in 2070", and explicit "Artwork by Noemí First" credit.
