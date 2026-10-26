@@ -71,4 +71,25 @@ assert.match(html, /class="project-media image-media artwork-recordings" href="h
 assert.doesNotMatch(html, /class="project-media image-media artwork-recordings" href="https:\/\/alejandromolinari\.bandcamp\.com\//, 'Selected Recordings must not link to Bandcamp.');
 assert.match(css, /\.artwork-symmetry img\{[\s\S]*?object-fit:cover;/, 'Symmetry editoral thumbnail must fit the project card without letterboxing.');
 
+
+const vogueStill = join(root,'assets','vogue-cowgirls-still.webp');
+const vogueLogo = join(root,'assets','vogue-wordmark.svg');
+assert.ok(existsSync(vogueStill), 'The original Vogue film still must be self-hosted.');
+assert.ok(statSync(vogueStill).size > 10000, 'Vogue still missing or unexpectedly small.');
+const stillBytes = readFileSync(vogueStill);
+assert.equal(stillBytes.subarray(0,4).toString('ascii'),'RIFF');
+assert.equal(stillBytes.subarray(8,12).toString('ascii'),'WEBP');
+assert.ok(existsSync(vogueLogo), 'The exact original Vogue logo SVG must be present.');
+const svg = readFileSync(vogueLogo,'utf8');
+assert.match(svg, /<svg\b/, 'Vogue logo must be a genuine SVG.');
+assert.doesNotMatch(svg, /<script\b/i, 'The original SVG should not run scripts.');
+assert.match(html, /src="assets\/vogue-cowgirls-still\.webp"/, 'Vogue card must use the supplied original still.');
+assert.match(html, /src="assets\/vogue-wordmark\.svg"/, 'Vogue card must use the supplied vector wordmark.');
+assert.match(html, /href="https:\/\/www\.instagram\.com\/p\/CLmkIbGqlWE\//, 'Vogue card must lead to its supplied original Instagram post.');
+assert.doesNotMatch(html, /class="artwork-vogue-title"/, 'Do not restore the false typography-only Vogue card.');
+assert.match(html, /href="https:\/\/on\.soundcloud\.com\/NrWLxctxKnFdLw2scq"[^>]*><span class="number">02<\/span>/, 'Culto recordings item 02 must link to the verified original SoundCloud set.');
+assert.doesNotMatch(html, /music\.apple\.com\/us\/album\/culto-a-la-vida-single/, 'The previous Apple Music Culto destination must remain replaced.');
+assert.ok(css.includes('.artwork-vogue-film .vogue-brand-mark'), 'The original Vogue SVG needs responsive positioning.');
+assert.ok(css.includes('.ui-external-icon,.media-arrow{display:none!important;}'), 'Mobile arrows must remain hidden.');
+
 console.log(`Verified ${count} projects, 5 local artwork assets, all links, logo and mobile rules.`);
