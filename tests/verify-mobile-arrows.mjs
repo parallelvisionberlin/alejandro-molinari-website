@@ -14,7 +14,7 @@ for (const path of pages) {
     assert.match(element[0], /aria-hidden="true"/, `${path}: decorative arrow needs aria-hidden`);
     markerCount++;
   }
-  assert.match(html, /styles\.css\?v=(?:20261025-(?:mobile-arrows|symmetry-film|symmetry-editorial02)|20261026-vogue-cowgirls)/, `${path}: fresh stylesheet needed for updated icon treatment`);
+  assert.match(html, /styles\.css\?v=(?:20261025-(?:mobile-arrows|symmetry-film|symmetry-editorial02)|20261026-(?:vogue-cowgirls|purple-editorial))/, `${path}: fresh stylesheet needed for updated icon treatment`);
 }
 assert.ok(markerCount >= 20, 'Expected desktop-only arrow indicators as non-text elements');
 const css = readFileSync(join(root, 'styles.css'), 'utf8');

@@ -365,3 +365,51 @@
  .artwork-vogue-film .vogue-film-kicker{top:clamp(77px,19vw,108px);left:23px;}
  .artwork-vogue-film .vogue-film-subtitle{bottom:22px;left:23px;}
 }
+
+/* Purple Future Radiooooo publisher recognition, 2026-10-26.
+   Keep Noemí First's original illustrated portrait entirely unobstructed.
+   Editorial byline sits below the artwork in the site’s normal project metadata. */
+.project-info-radiooooo{
+  align-items:flex-start;
+}
+.radiooooo-project-copy{
+  flex:1 1 auto;
+  min-width:0;
+}
+.radiooooo-publisher{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  column-gap:12px;
+  row-gap:4px;
+  margin:0 0 9px;
+}
+.radiooooo-publisher img{
+  width:89px;
+  height:auto;
+  max-height:36px;
+  object-fit:contain;
+  object-position:left center;
+  flex:0 0 auto;
+  mix-blend-mode:multiply;
+}
+.radiooooo-publisher span{
+  font-size:10px;
+  font-weight:750;
+  letter-spacing:.055em;
+  line-height:1.25;
+  color:#545450;
+}
+.project-info-radiooooo .radiooooo-art-credit{
+  margin-top:5px;
+  font-size:clamp(10px,.8vw,12px);
+  letter-spacing:.005em;
+  color:#74746e;
+}
+@media(max-width:760px){
+  .project-info-radiooooo{gap:8px;}
+  .radiooooo-publisher{column-gap:11px;margin-bottom:8px;}
+  .radiooooo-publisher img{width:86px;}
+  .radiooooo-publisher span{font-size:10px;}
+  .project-info-radiooooo .radiooooo-art-credit{font-size:11px;}
+}

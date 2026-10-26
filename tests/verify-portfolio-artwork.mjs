@@ -92,4 +92,17 @@ assert.doesNotMatch(html, /music\.apple\.com\/us\/album\/culto-a-la-vida-single/
 assert.ok(css.includes('.artwork-vogue-film .vogue-brand-mark'), 'The original Vogue SVG needs responsive positioning.');
 assert.ok(css.includes('.ui-external-icon,.media-arrow{display:none!important;}'), 'Mobile arrows must remain hidden.');
 
+
+const radioCard = html.match(/<article class="project" data-category="editorial">\s*<a aria-label="Read Alejandro Molinari for Purple Future Radiooooo"[\s\S]*?<\/article>/)?.[0];
+assert.ok(radioCard, 'Radiooooo editorial project must remain visible.');
+assert.match(radioCard, /href="https:\/\/purple\.fr\/diary\/alejandro-molinari-for-purple-future-radiooooo\//, 'The artwork must still link to the original Purple editorial.');
+assert.match(radioCard, /src="assets\/radiooooo-portrait\.webp"/, 'The original Noemí First illustration must remain unchanged.');
+assert.match(radioCard, /src="assets\/purple-diary-logo\.png"/, 'Purple publisher line must use the real Purple wordmark.');
+assert.match(radioCard, /DIARY \/ 14 JUL 2022/, 'Credit the actual Purple Diary publication date.');
+assert.match(radioCard, /A vision of music in 2070/, 'Explain Alejandro’s forward-looking concept.');
+assert.match(radioCard, /Artwork by Noemí First/, 'Credit the original illustrator.');
+assert.doesNotMatch(radioCard, /Commissioned contribution/, 'Do not restore vague attribution.');
+assert.match(css, /\.radiooooo-publisher img\{/, 'Credit block must be styled.');
+assert.ok(!html.includes('href="https://parallelvisionlabel.com/photography/"'), 'Photography must stay unpublished.');
+
 console.log(`Verified ${count} projects, 5 local artwork assets, all links, logo and mobile rules.`);
