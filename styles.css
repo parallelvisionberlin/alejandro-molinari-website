@@ -414,88 +414,38 @@
   .project-info-radiooooo .radiooooo-art-credit{font-size:11px;}
 }
 
-/* Vogue México / Diana López, 26 October 2026.
-   Original photographic credit is visible in the linked Vogue feature.
-   Do not replace this editorial treatment with unverified stock or AI imagery. */
+/* Vogue México / Diana López photographic feature, 26 October 2026.
+   Keep Alejandro Molinari's original uploaded photograph fully in frame.
+   Only a slight inset shadow is applied in CSS; no new AI imagery. */
 .artwork-vogue-mexico{
+  display:block;
   position:relative;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+  padding:0;
   overflow:hidden;
-  padding:clamp(19px,1.9vw,30px);
-  color:#eeece7;
-  background:#171818;
-  isolation:isolate;
+  background:#111;
 }
-.artwork-vogue-mexico::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:linear-gradient(155deg,#101111 0%,#272928 56%,#151616 100%);
-}
-.vogue-mx-eyebrow{
-  font-size:clamp(9px,.68vw,11px);
-  font-weight:700;
-  letter-spacing:.075em;
-  color:#aeaea7;
-}
-.vogue-mx-masthead{
+.artwork-vogue-mexico .vogue-mx-photo{
   display:block;
   width:100%;
-  margin:clamp(16px,2vw,38px) 0 auto;
-}
-.artwork-vogue-mexico .vogue-mx-masthead img{
-  display:block;
-  width:100%;
-  height:auto;
-  max-height:110px;
+  height:100%;
   object-fit:contain;
-  object-position:left center;
-  filter:invert(1);
+  object-position:center center;
+  background:#111;
+  filter:none;
   transform:none;
   transition:none;
 }
-.vogue-mx-masthead>span{
-  display:block;
-  margin:1px 1px 0;
-  font-size:clamp(10px,.8vw,13px);
-  font-weight:740;
-  letter-spacing:.23em;
+.artwork-vogue-mexico:hover .vogue-mx-photo,
+.artwork-vogue-mexico:focus-visible .vogue-mx-photo{
+  transform:none;
 }
-.vogue-mx-editorial{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:clamp(8px,1.1vw,15px);
+.artwork-vogue-mexico::after{
+  content:"";
+  pointer-events:none;
+  position:absolute;
+  inset:0;
+  z-index:1;
+  box-shadow:inset 0 0 clamp(20px,3.7vw,65px) rgba(0,0,0,.23);
+  background:linear-gradient(180deg,rgba(0,0,0,.03) 0%,transparent 35%,transparent 75%,rgba(0,0,0,.09) 100%);
 }
-.vogue-mx-subject,.vogue-mx-credit{
-  font-size:clamp(9px,.68vw,11px);
-  line-height:1.35;
-  font-weight:700;
-  letter-spacing:.07em;
-}
-.vogue-mx-subject{color:#d2d1cb}
-.vogue-mx-credit{color:#b1b2ac;letter-spacing:.025em}
-.vogue-mx-editorial strong{
-  display:block;
-  font-family:Georgia,'Times New Roman',serif;
-  font-size:clamp(29px,2.65vw,48px);
-  font-weight:400;
-  line-height:.99;
-  letter-spacing:-.065em;
-}
-.artwork-vogue-mexico:hover .vogue-mx-masthead img{transform:none}
-@media(max-width:760px){
-  .artwork-vogue-mexico{padding:18px}
-  .vogue-mx-editorial strong{font-size:clamp(26px,4.1vw,42px)}
-}
-@media(max-width:490px){
-  .artwork-vogue-mexico{padding:16px}
-  .vogue-mx-eyebrow{font-size:8px;letter-spacing:.04em}
-  .vogue-mx-editorial strong{font-size:clamp(29px,7vw,40px)}
-  .vogue-mx-credit,.vogue-mx-subject{font-size:9px}
-  .vogue-mx-masthead{margin:16px 0 auto}
-  .vogue-mx-masthead>span{font-size:10px}
-}
+.artwork-vogue-mexico .media-arrow{z-index:2;}
