@@ -414,23 +414,24 @@
   .project-info-radiooooo .radiooooo-art-credit{font-size:11px;}
 }
 
-/* Vogue México / Diana López photographic feature, 26 October 2026.
-   Keep Alejandro Molinari's original uploaded photograph fully in frame.
-   Only a slight inset shadow is applied in CSS; no new AI imagery. */
+/* Vogue México / Diana López | original photograph, original Vogue wordmark.
+   Preserve full composition. All treatment is CSS-only, no image regeneration. */
 .artwork-vogue-mexico{
-  display:block;
   position:relative;
-  padding:0;
+  display:block;
   overflow:hidden;
+  isolation:isolate;
+  padding:0;
   background:#111;
+  color:#f8f7f4;
 }
 .artwork-vogue-mexico .vogue-mx-photo{
   display:block;
   width:100%;
   height:100%;
   object-fit:contain;
-  object-position:center center;
-  background:#111;
+  object-position:center;
+  background:#101010;
   filter:none;
   transform:none;
   transition:none;
@@ -439,13 +440,98 @@
 .artwork-vogue-mexico:focus-visible .vogue-mx-photo{
   transform:none;
 }
-.artwork-vogue-mexico::after{
+.artwork-vogue-mexico::before{
   content:"";
-  pointer-events:none;
   position:absolute;
   inset:0;
   z-index:1;
-  box-shadow:inset 0 0 clamp(20px,3.7vw,65px) rgba(0,0,0,.23);
-  background:linear-gradient(180deg,rgba(0,0,0,.03) 0%,transparent 35%,transparent 75%,rgba(0,0,0,.09) 100%);
+  pointer-events:none;
+  background:
+    linear-gradient(to right,rgba(0,0,0,.36),rgba(0,0,0,.12) 46%,transparent 77%),
+    linear-gradient(to bottom,rgba(0,0,0,.38),transparent 35%,transparent 58%,rgba(0,0,0,.57));
 }
-.artwork-vogue-mexico .media-arrow{z-index:2;}
+.artwork-vogue-mexico::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  box-shadow:inset 0 0 clamp(20px,3.7vw,65px) rgba(0,0,0,.22);
+}
+.artwork-vogue-mexico .vogue-mx-overlay{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  pointer-events:none;
+  padding:clamp(15px,1.65vw,27px);
+  color:#f7f7f3;
+  text-shadow:0 1px 9px rgba(0,0,0,.65);
+}
+.artwork-vogue-mexico .vogue-mx-eyebrow{
+  font:700 clamp(8px,.64vw,11px)/1.3 Arial,Helvetica,sans-serif;
+  letter-spacing:.07em;
+}
+.artwork-vogue-mexico .vogue-mx-masthead{
+  display:block;
+  margin-top:clamp(12px,1.5vw,21px);
+  width:min(66%,330px);
+  flex:0 0 auto;
+}
+.artwork-vogue-mexico .vogue-mx-masthead img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:95px;
+  object-fit:contain;
+  object-position:left center;
+  filter:invert(1) drop-shadow(0 1px 3px #0008);
+  transform:none;
+  transition:none;
+}
+.artwork-vogue-mexico .vogue-mx-masthead>span{
+  display:block;
+  font-size:clamp(9px,.7vw,12px);
+  font-weight:750;
+  letter-spacing:.2em;
+}
+.artwork-vogue-mexico .vogue-mx-editorial{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:clamp(4px,.55vw,8px);
+  margin-top:auto;
+  max-width:68%;
+}
+.artwork-vogue-mexico .vogue-mx-subject,
+.artwork-vogue-mexico .vogue-mx-credit{
+  font:700 clamp(8px,.64vw,11px)/1.25 Arial,Helvetica,sans-serif;
+  letter-spacing:.04em;
+}
+.artwork-vogue-mexico .vogue-mx-editorial strong{
+  display:block;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(21px,2vw,34px);
+  font-weight:400;
+  line-height:.98;
+  letter-spacing:-.05em;
+}
+.artwork-vogue-mexico .media-arrow{z-index:4;}
+@media(max-width:760px){
+  .artwork-vogue-mexico .vogue-mx-overlay{padding:14px}
+  .artwork-vogue-mexico .vogue-mx-masthead{width:70%;margin-top:10px}
+  .artwork-vogue-mexico .vogue-mx-editorial{max-width:78%}
+  .artwork-vogue-mexico .vogue-mx-editorial strong{font-size:clamp(17px,3.15vw,29px)}
+}
+@media(max-width:490px){
+  .artwork-vogue-mexico .vogue-mx-overlay{padding:12px}
+  .artwork-vogue-mexico .vogue-mx-eyebrow,
+  .artwork-vogue-mexico .vogue-mx-subject,
+  .artwork-vogue-mexico .vogue-mx-credit{font-size:7px}
+  .artwork-vogue-mexico .vogue-mx-masthead{width:67%;margin-top:10px}
+  .artwork-vogue-mexico .vogue-mx-masthead>span{font-size:8px}
+  .artwork-vogue-mexico .vogue-mx-editorial{max-width:86%;gap:4px}
+  .artwork-vogue-mexico .vogue-mx-editorial strong{font-size:clamp(16px,5vw,23px)}
+}
